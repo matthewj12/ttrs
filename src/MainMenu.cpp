@@ -22,9 +22,9 @@ void mainMenuLoop() {
 	SDL_Event event;
 	options selected = options::Settings;
 
-	static Text title_text = Text(0, h_1_top, "TetrisEX", lg_font_size);
-	static Text play_text = Text(0, h_2_top, "Press Enter to Play", med_font_size, &med_grey);
-	static array<Text*, (int) options::OptionsSize> option_texts = {
+	Text title_text = Text(0, h_1_top, "TetrisEX", lg_font_size);
+	Text play_text = Text(0, h_2_top, "Press Enter to Play", med_font_size, &med_grey);
+	array<Text*, (int) options::OptionsSize> option_texts = {
 		new Text(0, button_top, "Settings", med_font_size, &white),
 		new Text(0, button_top, "High Scores", med_font_size, &med_grey)
 	};

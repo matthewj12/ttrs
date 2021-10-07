@@ -11,9 +11,9 @@ array<array<int, 9>, 2> presets = {{
 array<int, 9> p = presets[0];
 Settings* cur_settings_ptr = new Settings(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]);
 
-const char* window_caption = "Tetrix";
+const char* window_caption = "TetrisEX";
 bool program_running = true;
-string game_path_root = "C:/Users/matth/Documents/Coding/C++/SDLTetris/";
+string game_path_root = "../../";
 bool piece_previews_changed = false;
 
 const Uint8* key_states = SDL_GetKeyboardState(nullptr);

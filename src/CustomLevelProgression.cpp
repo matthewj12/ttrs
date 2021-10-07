@@ -56,7 +56,7 @@ void customLevelProgLoop() {
 	for (int i = 0; i < cust_lvl_prog.size(); ++i) {
 		events.push_back(new LevelChangeEvent(
 			events_left, 
-			events.size() == 0 ? events_top : events[i-1]->m_rect.y + events[i-1]->m_rect.h, 
+			events.empty() ? events_top : events[i-1]->m_rect.y + events[i-1]->m_rect.h, 
 			new_event_rect.w, 
 			new_event_rect.h
 		));
@@ -167,7 +167,7 @@ void customLevelProgLoop() {
 					else if (key == kc::Space) {
 						if (!editing_event) {
 							if (pos == events.size()) {
-								events.push_back(new LevelChangeEvent(events_left, events.size() == 0 ? events_top : events[events.size()-1]->m_rect.y + events[events.size()-1]->m_rect.h, new_event_rect.w, new_event_rect.h));
+								events.push_back(new LevelChangeEvent(events_left, events.empty() ? events_top : events[events.size()-1]->m_rect.y + events[events.size()-1]->m_rect.h, new_event_rect.w, new_event_rect.h));
 								new_event_rect.y += new_event_rect.h;
 							}
 							else {

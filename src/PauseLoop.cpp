@@ -19,7 +19,7 @@ enum class options {
 void pauseLoop() {
 	static SDL_Event event;
 	static Text pause_text = Text(0, h_1_top, "Paused", lg_font_size, &white);
-	static array<Text*, (int) options::OptionsSize> option_texts = {
+	array<Text*, (int) options::OptionsSize> option_texts = {
 		new Text(0, button_top, "Continue", med_font_size, &white),
 		new Text(0, button_top, "Main Menu", med_font_size, &med_grey)
 	};

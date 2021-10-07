@@ -267,11 +267,10 @@ void Piece::replaceSelf(Piece* p_cur_piece_ptr, vector<int>* p_INP_ptr, vector<i
 			break;
 		}
 		case piece_gen_modes::NES: {
-			new_index = 2;
-			// int new_index = getRandInt(0, 6);
-			// if (p_cur_piece_ptr->getTetrominoIndex() == new_index) {
-			// 	new_index = getRandInt(0, 6);
-			// }
+			int new_index = getRandInt(0, 6);
+			if (p_cur_piece_ptr->getTetrominoIndex() == new_index) {
+				new_index = getRandInt(0, 6);
+			}
 			p_INP_ptr->push_back(new_index);
 			break;
 		}	

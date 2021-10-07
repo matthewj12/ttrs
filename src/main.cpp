@@ -27,7 +27,7 @@ int main(int argc, char *args[]) {
 	srand(static_cast<unsigned int>(time(nullptr)));
 	getRandInt(0, 6);
 
-	cur_screen_func_ptr = &gameLoop;
+	cur_screen_func_ptr = &mainMenuLoop;
 	// Settings* temp_settings = new Settings(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]);
 	// save_data.m_SS_map[temp_settings->hash()] = {10, 5, 2, 1, 1};
 
@@ -37,15 +37,8 @@ int main(int argc, char *args[]) {
 
 	loadData();
 
-	cout << (cur_screen_func_ptr == &settingsLoop) << endl;
-
 	while (program_running) {
-		if (cur_screen_func_ptr != nullptr) {
-			(*cur_screen_func_ptr)();
-		}
-		else {
-			// pass
-		}
+		(*cur_screen_func_ptr)();
 	}
 
 	saveData();

@@ -178,8 +178,6 @@ void settingsLoop() {
 
 	static SDL_Event event;
 
-	cout << (cur_screen_func_ptr == &settingsLoop) << endl;
-
 	while (cur_screen_func_ptr == &settingsLoop) {
 		// _________________________ EVENTS _________________________
 		{
@@ -304,14 +302,29 @@ void settingsLoop() {
 
 					else if (key == kc::Enter || key == kc::Shift) {
 						start_level = (*selected_options_ptr)[0];
-						cur_settings_ptr = new Settings((*selected_options_ptr)[2], (*selected_options_ptr)[3], (*selected_options_ptr)[4], (*selected_options_ptr)[5], (*selected_options_ptr)[6], (*selected_options_ptr)[7], (*selected_options_ptr)[8], (*selected_options_ptr)[9], (*selected_options_ptr)[10]);
+						cur_settings_ptr = new Settings(
+							(*selected_options_ptr)[2], 
+							(*selected_options_ptr)[3], 
+							(*selected_options_ptr)[4], 
+							(*selected_options_ptr)[5], 
+							(*selected_options_ptr)[6], 
+							(*selected_options_ptr)[7], 
+							(*selected_options_ptr)[8], 
+							(*selected_options_ptr)[9], 
+							(*selected_options_ptr)[10]);
 
 						if (key == kc::Enter) {
+							cout << "Hi" << endl;
+							SDL_FlushEvent(SDL_KEYDOWN);
+							SDL_FlushEvent(SDL_KEYUP);
+
 							cur_screen_func_ptr = &gameLoop;
 						}
 						else if (key == kc::Shift) {
 							cur_screen_func_ptr = &mainMenuLoop;
 						}
+
+						return;
 					}
 					
 					else if (key == kc::Space) {

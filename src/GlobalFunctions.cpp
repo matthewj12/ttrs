@@ -68,7 +68,7 @@ void setFirstLineClearsToAdvance() {
 }
 
 void loadData() {
-	ifstream file("C:/Users/matth/Documents/Coding/C++/SDLTetris/res/data.dat", ios::out | ios::binary);
+	ifstream file("../../res/data.dat", ios::out | ios::binary);
 
 	if (!file) {
 		cout << "Cannot open file!\n";
@@ -88,7 +88,7 @@ void loadData() {
 }
 
 void saveData() {
-	ofstream file("C:/Users/matth/Documents/Coding/C++/SDLTetris/res/data.dat", ios::out | ios::binary);
+	ofstream file("../../res/data.dat", ios::out | ios::binary);
 
 	if (!file) {
 		cout << "Cannot open file!\n";
